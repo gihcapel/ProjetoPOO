@@ -7,8 +7,7 @@ import javax.swing.*;
 
 public class JanelaVagao extends JFrame {
 	
-	//Atributos da classe JanelaVagao
-	private JLabel ltipo, lsubtipo, lpesomaxebitola, lproprietario, lcomprimentovagao;
+	//Componentes da classe JanelaVagao
 	private JTextField ttipo, tsubtipo, tpesomaxebitola, tproprietario, tcomprimentovagao;
 	private JButton blimpar, bsalvar;
 	private JPanel c;
@@ -16,12 +15,7 @@ public class JanelaVagao extends JFrame {
 	public JanelaVagao(){
 		super("JanelaVagao");
 		
-		//Instanciação dos atributos
-		ltipo = new JLabel("Tipo");
-		lsubtipo = new JLabel ("Subtipo");
-		lpesomaxebitola = new JLabel ("Peso máximo admissível e bitola");
-		lproprietario = new JLabel ("Proprietário");
-		lcomprimentovagao = new JLabel ("Comprimento do vagão");
+		//Instanciação dos componentes
 		ttipo = new JTextField();
 		tsubtipo = new JTextField();
 		tpesomaxebitola = new JTextField();
@@ -30,15 +24,33 @@ public class JanelaVagao extends JFrame {
 		blimpar = new JButton("Limpar");
 		bsalvar = new JButton ("Salvar");
 		
-		c = new JPanel();
-		c.setLayout(new GridLayout(2,2));
-		c.add(ltipo); c.add(ttipo);
-		c.add(lsubtipo); c.add(tsubtipo);
-		c.add(lpesomaxebitola); c.add(tpesomaxebitola);
-		c.add(lproprietario); c.add(tproprietario);
-		c.add(lcomprimentovagao); c.add(tcomprimentovagao);
-		c.add(blimpar); c.add(bsalvar);
+		//Organizando layout dos componentes
+		this.setLayout(new GridLayout(6, 2, 5, 5));
+		add(new JLabel("Tipo"));
+		add(new JLabel("Subtipo"));
+		add(new JLabel("Peso máximo admissível e bitola"));
+		add(new JLabel("Proprietário"));
+		add(new JLabel("Comprimento do vagão"));
+		add(blimpar);
+		add(bsalvar);
 		pack();
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//Colocando os listeners
+		
+		
+			
+	}
+	
+	
+
+	private void add(JButton JButton) {
+				
+	}
+
+	private void add(JLabel jLabel) {
+		
 	}
 	
 	
