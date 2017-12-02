@@ -1,13 +1,14 @@
 package ComposicaoFerroviaria;
 
 public class Vagao {
-	
+	//Atributos da classe vagão
 	private String tipo;
 	private String subtipo;
 	private String pesoMaxEBitola;
 	private int proprietario;
 	private double comprimentoVagao;
 	
+	//Métodos getters e setters da classe vagão
 	public String getTipo() {
 		return tipo;
 	}
@@ -39,9 +40,8 @@ public class Vagao {
 		this.comprimentoVagao = comprimentoVagao;
 	}
 	
-	private void adicionarVagao(){
-		
-	}
+	
 	
 
 }
+
