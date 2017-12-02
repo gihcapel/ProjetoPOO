@@ -1,7 +1,7 @@
 package ComposicaoFerroviaria;
 
 public class Vagao {
-	//Atributos da classe vagão
+	//Componentes da classe vagão
 	private String tipo;
 	private String subtipo;
 	private String pesoMaxEBitola;
