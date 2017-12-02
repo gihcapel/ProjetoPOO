@@ -2,7 +2,7 @@ package ComposicaoFerroviaria;
 
 public class Locomotiva {
 	
-	//Atributos da classe locomotiva
+	//Componentes da classe locomotiva
 	private int classe;
 	private String descricao;
 	private double pesoMaxRebocavel;
