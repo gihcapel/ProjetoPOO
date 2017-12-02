@@ -1,6 +1,8 @@
 package ComposicaoFerroviaria;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -12,7 +14,7 @@ public class JanelaVagao extends JFrame {
 	private JButton blimpar, bsalvar;
 	private JPanel c;
 	
-	public JanelaVagao(){
+	public JanelaVagao(ActionListener e){
 		super("JanelaVagao");
 		
 		//Instanciação dos componentes
@@ -38,23 +40,23 @@ public class JanelaVagao extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//Colocando os listeners
+		blimpar.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				bsalvar_click(e);
+			}	
+		});
 		
-		
+		blimpar.addActionListener(e){
+			ttipo.setText("");
+			tsubtipo.setText("");
+			tpesomaxebitola.setText("");
+			tproprietario.setText("");
+			tcomprimentovagao.setText("");
+		}	
 			
 	}
-	
-	
-
-	private void add(JButton JButton) {
-				
-	}
-
-	private void add(JLabel jLabel) {
+	//Método para salvar as inforações sobre o vagão
+	private void bsalvar_click(ActionEvent e) {
+		
 		
 	}
-	
-	
-	
-	
-	
-}
