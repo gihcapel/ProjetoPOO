@@ -2,13 +2,14 @@ package ComposicaoFerroviaria;
 
 public class Locomotiva {
 	
+	//Atributos da classe locomotiva
 	private int classe;
 	private String descricao;
 	private double pesoMaxRebocavel;
 	private double bitola;
 	private double comprimentoLocomotiva;
 	
-
+	//Métodos getters e setters da classe locomotiva
 	public int getClasse() {
 		return classe;
 	}
