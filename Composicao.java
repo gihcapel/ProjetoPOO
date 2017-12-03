@@ -9,8 +9,8 @@ public class Composicao {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	protected ArrayList<Locomotiva> locomotivas = new ArrayList<>();
-	protected ArrayList<Vagao> vagoes = new ArrayList<>();
+	protected ArrayList<Locomotiva> locomotivas = new ArrayList<>(Locomotiva);
+	protected ArrayList<Vagao> vagoes = new ArrayList<>(Vagao);
 	
 	public Composicao(String nome, ArrayList<Locomotiva> locomotivas, ArrayList<Vagao> vagoes) {
 		this.nome = nome;
