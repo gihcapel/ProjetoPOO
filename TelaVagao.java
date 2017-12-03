@@ -1,4 +1,3 @@
-package poo;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class TelaVagao extends JFrame implements ActionListener{
+public class TelaVagao extends JFrame {
 	
 	//Componentes da classe JanelaVagao
 		private JTextField ttipo, tsubtipo, tbitola, tproprietario, tcomprimento;
@@ -39,10 +38,34 @@ public class TelaVagao extends JFrame implements ActionListener{
 			painel.add(bsalvar);
                         painel.add(bexcluir);
 			painel.add(bconsultar);
-                        badicionar.addActionListener((ActionListener) this);
-                        bsalvar.addActionListener((ActionListener) this);
-                        bexcluir.addActionListener((ActionListener) this);
-                        bconsultar.addActionListener((ActionListener) this);                      
+                        
+                        badicionar.addActionListener(new java.awt.event.ActionListener(){
+                            @Override
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                adicionar();
+                            }                            
+                        });
+                        
+                        bsalvar.addActionListener(new java.awt.event.ActionListener(){
+                            @Override
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                salvar();
+                            }                            
+                        });
+                        
+                        bexcluir.addActionListener(new java.awt.event.ActionListener(){
+                            @Override
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                excluir();
+                            }                            
+                        });
+                        
+                        bconsultar.addActionListener(new java.awt.event.ActionListener(){
+                            @Override
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                consultar();
+                            }                            
+                        });
                         
                         
                         setContentPane(painel);
@@ -51,11 +74,7 @@ public class TelaVagao extends JFrame implements ActionListener{
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                
                   
                    }     
-                
-                @Override
-                    public void actionPerformed(ActionEvent e){
-                        
-                    }
+                               
 			
                 }
 
