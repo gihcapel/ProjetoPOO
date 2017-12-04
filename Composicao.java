@@ -1,7 +1,15 @@
+package poo;
+
+ 
 import java.util.ArrayList;
+import poo.Vagao;
 
 public class Composicao {
 	private String nome;
+
+    Composicao() {
+        
+    }
 	
 	public String getNome() {
 		return nome;
@@ -9,8 +17,8 @@ public class Composicao {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	protected ArrayList<Locomotiva> locomotivas = new ArrayList<>(Locomotiva);
-	protected ArrayList<Vagao> vagoes = new ArrayList<>(Vagao);
+	protected ArrayList<Locomotiva> locomotivas = new ArrayList<Locomotiva>();
+	protected ArrayList<Vagao> vagoes = new ArrayList<Vagao>();
 	
 	public Composicao(String nome, ArrayList<Locomotiva> locomotivas, ArrayList<Vagao> vagoes) {
 		this.nome = nome;
