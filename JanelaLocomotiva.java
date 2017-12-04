@@ -14,7 +14,7 @@ public class JanelaLocomotiva extends JFrame{
 		lvazia= new JLabel("");
 		lclasse = new JLabel("Tipo:");
 		ldescricao = new JLabel("Subtipo:");
-		lbitola = new JLabel("Propriet·rio:");
+		lbitola = new JLabel("Propriet√°rio:");
 		lpesomax = new JLabel("Pesoadm:");
 		lcomprimento = new JLabel("Comprimento:");
 
@@ -30,6 +30,8 @@ public class JanelaLocomotiva extends JFrame{
 		btnLimpar = new JButton("Limpar");
 		
 		painel1.setLayout(new GridLayout(7, 2, 5, 5));
+		painel1.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
+                painel1.setBackground(Color.WHITE);
 		
 		painel1.add(llocomotivaId);
 		painel1.add(tlocomotivaId);
