@@ -1,18 +1,26 @@
+package interfacagrafica;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import ClassesPrincipais.Vagao;
 
 import javax.swing.*;
 
+
 public class JanelaVagao extends JFrame {
 	
-                //Componentes da classe JanelaVagao
+                /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+				//Componentes da classe JanelaVagao
                 private JLabel ltipo, lsubtipo, lbitola, lproprietario, lcomprimento, lpesomax, lbitolametro;
 		private JTextField ttipo, tsubtipo, tbitola, tproprietario, tcomprimento, tpesomax, tbitolametro;
 		private JButton btnadicionar, btnsalvar, btnexcluir, btnconsultar;
 		JPanel painel = new JPanel();
-		
+		ArrayList<Vagao> vagoes = new ArrayList<Vagao>();
 		public JanelaVagao(){
 			super("Janela Vagão");
                         
@@ -68,18 +76,33 @@ public class JanelaVagao extends JFrame {
                         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         setContentPane(painel);                        
 			 
-                        
+                   
                         btnadicionar.addActionListener(new java.awt.event.ActionListener(){
                             @Override
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                
+                            	
+                            	ttipo.setText("");
+                            	tsubtipo.setText("");
+                            	tbitola.setText("");
+                            	tpesomax.setText("");
+                            	tbitolametro.setText("");
+                            	tcomprimento.setText("");
+                            	tproprietario.setText("");
                             }                            
                         });
                         
                         btnsalvar.addActionListener(new java.awt.event.ActionListener(){
                             @Override
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                
+                            	String nome= tproprietario.getText();
+                            	char tipo= ttipo.getText().charAt(0), subtipo= tsubtipo.getText().charAt(0),
+                            			bitola= tbitola.getText().charAt(0);
+                            	double comprimento=Double.parseDouble(tcomprimento.getText());
+                            	Vagao vagao = new Vagao(tipo, subtipo, bitola, comprimento, nome);
+                            	vagoes.add(vagao);
+                            	tpesomax.setText(String.valueOf(vagao.getPesoMax()));
+                            	tbitolametro.setText(String.valueOf(vagao.getBitolaMetro()));
+                            	
                             }                            
                         });
                         
@@ -93,7 +116,7 @@ public class JanelaVagao extends JFrame {
                         btnconsultar.addActionListener(new java.awt.event.ActionListener(){
                             @Override
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                
+                            	System.out.println(vagoes);
                             }                            
                         });
                         
