@@ -19,6 +19,7 @@ public class JanelaLocomotiva extends JFrame{
 		lcomprimento = new JLabel("Comprimento:");
 
 		tlocomotivaId = new JTextField();
+		tlocomotivaId.setEditable(false);
 		tclasse = new JTextField();
 		tdescricao = new JTextField();
 		tbitola = new JTextField();
@@ -26,7 +27,7 @@ public class JanelaLocomotiva extends JFrame{
 		tcomprimento = new JTextField();
 		
 		btnCadastrar = new JButton("Cadastrar");
-		btnLimpar = new JButton("Alterar");
+		btnLimpar = new JButton("Limpar");
 		
 		painel1.setLayout(new GridLayout(7, 2, 5, 5));
 		
@@ -45,9 +46,21 @@ public class JanelaLocomotiva extends JFrame{
 		painel1.add(btnCadastrar);
 		painel1.add(btnLimpar);
 		pack();
+		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setContentPane(painel1);
 		
+		btnLimpar.addActionListener(new java.awt.event.ActionListener(){
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	tclasse.setText("");
+            	tdescricao.setText("");
+            	tbitola.setText("");
+            	tpesomax.setText("");
+            	tcomprimento.setText("");
+            }                            
+        });
 		}	
 	}
 }
