@@ -2,7 +2,6 @@ package poo;
 
  
 import java.util.ArrayList;
-import poo.Vagao;
 
 public class Composicao {
 	private String nome;
