@@ -1,34 +1,42 @@
 package interfacagrafica;
 
 import java.awt.*;
+import java.awt.GridLayout;
+
 import javax.swing.*;
 
 public class JanelaMenu extends JFrame{ 
-    
+
+        //Um novo painel que deve conter as informações é criado dentro da janela
 	JPanel painel= new JPanel();
-	private JButton btnCadastrarLocomotiva, btnCadastrarVagao, btnComposicao, btnListaLocomotiva, btnListaVagao;
+        
+        //Componentes da classe JanelaMenu
+	private JButton btnCadastrarLocomotiva, btnCadastrarVagao, btnCadastrarComposicao;
         
 	JanelaMenu(){
-		super("Composição Ferroviária");
-		btnLocomotiva = new JButton("Locomotiva");
-		btnVagao = new JButton("Vagão");
-		btnComposicao = new JButton("Composição");
-		btnListaLocomotiva = new JButton("Consultar/Remover Locomotiva");
-		
-		painel.setLayout(new GridLayout(7, 2, 5, 5));
-                painel.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
-                painel.setBackground(Color.WHITE);
-		
-		painel.add(btnLocomotiva);
-		painel.add(btnVagao);
-		painel.add(btnComposicao);
+		super("Composição Ferroviária"); //Título da janela
+                
+                //Botões do menu
+		btnCadastrarLocomotiva = new JButton("Cadastrar Locomotiva");
+		btnCadastrarVagao = new JButton("Cadastrar Vagão");
+		btnCadastrarComposicao = new JButton("Cadastrar Composição");
+		                
+		painel.setLayout(new GridLayout(7, 2, 5, 5)); //painel com 7 linhas, 2 colunas e 5 de distância 
+                painel.setBackground(Color.WHITE); //Fundo branco
+                
+                
+		//Botões são adicionados no paínel
+		painel.add(btnCadastrarLocomotiva);
+		painel.add(btnCadastrarVagao);
+		painel.add(btnCadastrarComposicao);
 		pack();
 		
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false); //Janela não pode mudar de tamanho
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Botão X fecha a janela
 		setContentPane(painel);
 		
-		btnLocomotiva.addActionListener(new java.awt.event.ActionListener(){
+                //Métodos que adicionam ações aos botões
+		btnCadastrarLocomotiva.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             	JanelaLocomotiva l = new JanelaLocomotiva();
@@ -37,13 +45,8 @@ public class JanelaMenu extends JFrame{
                         l.setLocation(300,300);
             }                            
         });
-		btnListaLocomotiva.addActionListener(new java.awt.event.ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	
-            }                            
-        });
-		btnVagao.addActionListener(new java.awt.event.ActionListener(){
+		
+		btnCadastrarVagao.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JanelaVagao v = new JanelaVagao();
@@ -53,9 +56,14 @@ public class JanelaMenu extends JFrame{
             	
             }                            
         });
-		btnComposicao.addActionListener(new java.awt.event.ActionListener(){
+		
+		btnCadastrarComposicao.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    JanelaComposicao c = new JanelaComposicao();
+                    c.setVisible(true);
+                    c.setSize(680,480);
+                    c.setLocation(300,300);
             	
             }                            
         });
