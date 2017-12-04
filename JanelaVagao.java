@@ -14,7 +14,7 @@ public class JanelaVagao extends JFrame {
 		JPanel painel = new JPanel();
 		
 		public JanelaVagao(){
-			super("Janela Vagao");
+			super("Janela Vagão");
                         
                         ltipo = new JLabel("Tipo de vagão:");
                         lsubtipo = new JLabel("Subtipo do vagão:");
