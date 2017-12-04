@@ -1,8 +1,6 @@
 package interfacagrafica;
 
 import java.awt.*;
-import java.awt.GridLayout;
-
 import javax.swing.*;
 
 public class JanelaMenu extends JFrame{ 
@@ -12,20 +10,17 @@ public class JanelaMenu extends JFrame{
         
 	JanelaMenu(){
 		super("Composição Ferroviária");
-		btnCadastrarLocomotiva = new JButton("Cadastrar Locomotiva");
-		btnCadastrarVagao = new JButton("Cadastrar Vagão");
+		btnLocomotiva = new JButton("Locomotiva");
+		btnVagao = new JButton("Vagão");
 		btnComposicao = new JButton("Composição");
 		btnListaLocomotiva = new JButton("Consultar/Remover Locomotiva");
-		btnListaVagao = new JButton("Consultar/Remover Vagão");
 		
 		painel.setLayout(new GridLayout(7, 2, 5, 5));
                 painel.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
                 painel.setBackground(Color.WHITE);
 		
-		painel.add(btnCadastrarLocomotiva);
-		painel.add(btnListaLocomotiva);
-		painel.add(btnCadastrarVagao);
-		painel.add(btnListaVagao);
+		painel.add(btnLocomotiva);
+		painel.add(btnVagao);
 		painel.add(btnComposicao);
 		pack();
 		
@@ -33,7 +28,7 @@ public class JanelaMenu extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(painel);
 		
-		btnCadastrarLocomotiva.addActionListener(new java.awt.event.ActionListener(){
+		btnLocomotiva.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             	JanelaLocomotiva l = new JanelaLocomotiva();
@@ -48,19 +43,13 @@ public class JanelaMenu extends JFrame{
             	
             }                            
         });
-		btnCadastrarVagao.addActionListener(new java.awt.event.ActionListener(){
+		btnVagao.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JanelaVagao v = new JanelaVagao();
                         v.setVisible(true);
                         v.setSize(680,480);
                         v.setLocation(300,300);
-            	
-            }                            
-        });
-		btnListaVagao.addActionListener(new java.awt.event.ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
             	
             }                            
         });
