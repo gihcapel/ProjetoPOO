@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import ClassesPrincipais.Vagao;
 
 import javax.swing.*;
+import javax.swing.JList;
+import javax.swing.border.LineBorder;
 
 
 public class JanelaVagao extends JFrame {
@@ -122,14 +124,29 @@ public class JanelaVagao extends JFrame {
                         btnconsultar.addActionListener(new java.awt.event.ActionListener(){
                             @Override
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                            	System.out.println(vagoes);
-                            }                            
+                                
+                                JPanel panel = new JPanel();      
+                                JTable table = new JTable();  
+                                JFrame frame = new JFrame();   
+                                /* 
+                                 * Adicionar na o table model no Panel*/  
+                                TableModel ntm = new TableModel(vagoes);  
+                                table.setBorder(new LineBorder(Color.black));  
+                                table.setGridColor(Color.black);  
+                                table.setShowGrid(true);  
+                                table.setModel(ntm);  
+                                panel.add(table);  
+                                  
+                                frame.add(panel);  
+                                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+                                frame.pack();  
+                                frame.setSize(540, 540);  
+                                frame.setVisible(true);  
+                          
+                            }  
+                        
+                            	
+                                                        
                         });
-                        
-                        
-                                     
-                  
-                   }     
-                               
-			
+                   }               
                 }
