@@ -41,6 +41,8 @@ public class JanelaVagao extends JFrame {
 			
 			                        
 			painel.setLayout(new GridLayout(9, 2, 5, 5));
+			painel.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
+                        painel.setBackground(Color.WHITE);
                         
                         painel.add(ltipo);
                         painel.add(ttipo);
